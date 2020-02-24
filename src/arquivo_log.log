@@ -1,34 +1,40 @@
-2020-02-21 13:57:45,625:DEBUG:Conecting...
-2020-02-21 13:57:45,934:DEBUG:starting thread (client mode): 0x22a9650
-2020-02-21 13:57:45,934:DEBUG:Local version/idstring: SSH-2.0-paramiko_2.7.1
-2020-02-21 13:57:46,098:DEBUG:Remote version/idstring: SSH-2.0-AWS_SFTP_1.0
-2020-02-21 13:57:46,098:INFO:Connected (version 2.0, client AWS_SFTP_1.0)
-2020-02-21 13:57:46,260:DEBUG:kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
-2020-02-21 13:57:46,260:DEBUG:Kex agreed: curve25519-sha256@libssh.org
-2020-02-21 13:57:46,260:DEBUG:HostKey agreed: ssh-rsa
-2020-02-21 13:57:46,260:DEBUG:Cipher agreed: aes128-ctr
-2020-02-21 13:57:46,260:DEBUG:MAC agreed: hmac-sha2-256
-2020-02-21 13:57:46,260:DEBUG:Compression agreed: none
-2020-02-21 13:57:46,468:DEBUG:kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
-2020-02-21 13:57:46,469:DEBUG:Switch to new keys ...
-2020-02-21 13:57:46,469:DEBUG:Attempting password auth...
-2020-02-21 13:57:46,828:DEBUG:userauth is OK
-2020-02-21 13:57:47,772:INFO:Authentication (password) successful!
-2020-02-21 13:57:47,772:INFO:Connected
-2020-02-21 13:57:47,772:INFO:Getting file
-2020-02-21 13:57:47,772:DEBUG:[chan 0] Max packet in: 32768 bytes
-2020-02-21 13:57:47,932:DEBUG:Received global request "hostkeys-00@openssh.com"
-2020-02-21 13:57:47,932:DEBUG:Rejecting "hostkeys-00@openssh.com" global request from server.
-2020-02-21 13:57:48,091:DEBUG:[chan 0] Max packet out: 32768 bytes
-2020-02-21 13:57:48,091:DEBUG:Secsh channel 0 opened.
-2020-02-21 13:57:48,251:DEBUG:[chan 0] Sesch channel 0 request ok
-2020-02-21 13:57:49,615:INFO:[chan 0] Opened sftp connection (server version 3)
-2020-02-21 13:57:49,615:DEBUG:[chan 0] stat(b'challenge_sales.csv')
-2020-02-21 13:57:49,907:DEBUG:[chan 0] open(b'challenge_sales.csv', 'rb')
-2020-02-21 13:57:50,087:DEBUG:[chan 0] open(b'challenge_sales.csv', 'rb') -> 30
-2020-02-21 13:57:50,633:DEBUG:[chan 0] close(30)
-2020-02-21 13:57:50,796:INFO:[chan 0] sftp session closed.
-2020-02-21 13:57:50,797:DEBUG:[chan 0] EOF sent (0)
-2020-02-21 13:57:50,797:INFO:Closed connection
-2020-02-21 13:57:50,803:INFO:Writting Json
-2020-02-21 13:57:50,809:INFO:Finished
+2020-02-24 18:52:02,445:DEBUG:Conecting...
+2020-02-24 18:52:02,861:DEBUG:starting thread (client mode): 0xabe4690
+2020-02-24 18:52:02,861:DEBUG:Local version/idstring: SSH-2.0-paramiko_2.7.1
+2020-02-24 18:52:03,034:DEBUG:Remote version/idstring: SSH-2.0-AWS_SFTP_1.0
+2020-02-24 18:52:03,034:INFO:Connected (version 2.0, client AWS_SFTP_1.0)
+2020-02-24 18:52:03,176:DEBUG:kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2020-02-24 18:52:03,176:DEBUG:Kex agreed: curve25519-sha256@libssh.org
+2020-02-24 18:52:03,176:DEBUG:HostKey agreed: ssh-rsa
+2020-02-24 18:52:03,177:DEBUG:Cipher agreed: aes128-ctr
+2020-02-24 18:52:03,177:DEBUG:MAC agreed: hmac-sha2-256
+2020-02-24 18:52:03,177:DEBUG:Compression agreed: none
+2020-02-24 18:52:03,367:DEBUG:kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2020-02-24 18:52:03,367:DEBUG:Switch to new keys ...
+2020-02-24 18:52:03,367:DEBUG:Attempting password auth...
+2020-02-24 18:52:03,691:DEBUG:userauth is OK
+2020-02-24 18:52:04,690:INFO:Authentication (password) successful!
+2020-02-24 18:52:04,690:INFO:Connected
+2020-02-24 18:52:04,690:INFO:Getting file
+2020-02-24 18:52:04,691:DEBUG:[chan 0] Max packet in: 32768 bytes
+2020-02-24 18:52:04,833:DEBUG:Received global request "hostkeys-00@openssh.com"
+2020-02-24 18:52:04,833:DEBUG:Rejecting "hostkeys-00@openssh.com" global request from server.
+2020-02-24 18:52:04,976:DEBUG:[chan 0] Max packet out: 32768 bytes
+2020-02-24 18:52:04,976:DEBUG:Secsh channel 0 opened.
+2020-02-24 18:52:05,121:DEBUG:[chan 0] Sesch channel 0 request ok
+2020-02-24 18:52:06,533:INFO:[chan 0] Opened sftp connection (server version 3)
+2020-02-24 18:52:06,575:DEBUG:[chan 0] stat(b'challenge_sales.csv')
+2020-02-24 18:52:06,904:DEBUG:[chan 0] open(b'challenge_sales.csv', 'rb')
+2020-02-24 18:52:07,064:DEBUG:[chan 0] open(b'challenge_sales.csv', 'rb') -> 30
+2020-02-24 18:52:07,556:DEBUG:[chan 0] close(30)
+2020-02-24 18:52:07,701:INFO:[chan 0] sftp session closed.
+2020-02-24 18:52:07,701:DEBUG:[chan 0] EOF sent (0)
+2020-02-24 18:52:07,702:INFO:Closed connection
+2020-02-24 18:52:07,769:INFO:Writting Json
+2020-02-24 18:52:07,775:INFO:Finished
+2020-02-24 18:52:07,802:INFO:Connecting database
+2020-02-24 18:52:07,803:INFO:Create table MetaDados
+2020-02-24 18:52:07,803:INFO:Insert data MetaDados
+2020-02-24 18:52:07,804:INFO:Create table Sales
+2020-02-24 18:52:07,804:INFO:Insert data Sales
+2020-02-24 18:52:07,805:DEBUG:EOF in transport thread

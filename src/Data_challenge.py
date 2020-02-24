@@ -12,6 +12,7 @@ class Data():
 
         self.getfile()
         self.filejson()
+        self.database()
 
     def getfile(self):
         import pysftp as sftp
@@ -44,7 +45,6 @@ class Data():
 
         import csv
         import json
-        from collections import OrderedDict
 
         arquivo = open('challenge_sales.csv', 'r')
         lista = csv.reader(arquivo, delimiter=';')
@@ -54,6 +54,9 @@ class Data():
         # Trata o cabecalho
         first_line = arquivo.readline().rstrip()
         first_line = first_line.split(';')
+
+        global string_meta
+        string_meta = (first_line[0], first_line[1], first_line[2], first_line[3], first_line[4], first_line[5])
 
         data_dict = [{
             'Tipo de Registro': first_line[0],
@@ -68,6 +71,10 @@ class Data():
 
         # trata o restante
         self.logging.info('Writting Json')
+
+        global string_sales
+        string_sales = []
+
         with open('arquivo_parseado.json', 'w') as write_file:
 
             for linha in lista:
@@ -96,10 +103,53 @@ class Data():
                     }]
                     data_dict = data_dict + data
 
+                    line = [(linha[0], linha[1], linha[2], linha[3], linha[4], linha[5], linha[6], linha[7], linha[8], linha[9], linha[10], linha[11], linha[12], linha[13], linha[14], linha[15], linha[16], linha[17], linha[18])]
+                    string_sales = string_sales + line
+
             json.dump(data_dict, write_file, indent=3)
             self.logging.info('Finished')
-            print('finish')
+            print('finished')
+
+    def database(self):
+
+        import sqlite3
+
+        self.logging.info('Connecting database')
+        conn = sqlite3.connect(':memory:')
+        cursor = conn.cursor()
+
+        self.logging.info('Create table MetaDados')
+        cursor.execute('Create table MetaDados (TipodeRegistro text, CodigodoCliente text, HoraDeCriacaoDoArquivo text, '
+                       'DataDeCriacaoDoArquivo text, VersaoDoArquivo text, CodgigoUnicoDoArquivo text)')
+
+        self.logging.info('Insert data MetaDados')
+        cursor.execute('Insert into MetaDados values (?,?,?,?,?,?)', string_meta)
+        conn.commit()
+
+        sql = 'select * from MetaDados'
+        cursor.execute(sql)
+        print(cursor.fetchall())
+
+        self.logging.info('Create table Sales')
+        cursor.execute(
+            'Create table Sales (TipoDeRegistro text, CodigoDaVenda text, CodigoDaAdquirente text, '
+            'CodigoDoEstabelecimento text, PDV text, CodigoDaBandeira text, TipoDaTransacao text, ValorTotalDaVenda '
+            'text, ValorPago text, TaxaDaVenda text, TaxaTotalDaVenda text, TotalDeParcelas text, NumeroDoComprovante '
+            'text ,CodigoDaAutorizacao text, NumeroDoResumo text, NumeroDoCartao text, DataDaVenda text, '
+            'HoradaTransacao text, CodigoDoCliente text)')
+
+        self.logging.info('Insert data Sales')
+        cursor.executemany('Insert into Sales values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', string_sales)
+        conn.commit()
+
+        sql = 'select * from Sales'
+        cursor.execute(sql)
+        print(cursor.fetchall())
+
 
 
 if __name__ == '__main__':
     Data()
+
+
+
