@@ -1,1 +1,7 @@
 pysftp==0.2.9
+black==19.10b0
+flake8==3.7.9
+flake8-black==0.1.1
+pyflakes==2.1.1
+toml==0.10.0
+regex==2020.2.20
